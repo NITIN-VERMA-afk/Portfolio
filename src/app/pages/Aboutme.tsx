@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 
 const Aboutme = () => {
   return (
-    <div className="flex mt-32">
-      <div>
-        <div className="w-64 h-72  border-8 border-blue"></div>
+    <div className="flex flex-col lg:flex-row gap-5 mt-10 lg:mt-36 container mx-auto">
+      <div className="lg:w-1/2">
+        <div className="w-64 h-56  border-8 border-blue"></div>
         <div className="relative bottom-80 right-7 ">
-          <Image src="/img/profile.jpg" width={250} height={350} alt="My pic" />
+          <Image src="/img/my_pic.jpg" width={250} height={350} alt="My pic" />
         </div>
       </div>
       <div>

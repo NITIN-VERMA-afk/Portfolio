@@ -25,16 +25,16 @@ const icons = [
 
 const Footer = () => {
   return (
-    <div className="flex justify-around rounded bg-blue-600 p-6">
+    <div className=" flex flex-col justify-center items-center gap-4  rounded bg-blue-600 p-6">
       <div>
         <p>nitin verma</p>
       </div>
       <div>
         <p>2024-2025 all right reserved</p>
       </div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 ">
         {icons.map((item) => (
-          <div  key={item.id}>
+          <div className="w-12 h-12 border border-gray-300 bg-gradient-to-br from-blue-600 to-blue-500 rounded flex justify-center items-center" key={item.id}>
             <ul>
               <li>{item.icon}</li>
             </ul>

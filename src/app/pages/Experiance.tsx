@@ -16,6 +16,7 @@ import { FaPython } from "react-icons/fa";
 
 
 
+
 const experienceData=[
     {
         id:1,
@@ -91,15 +92,15 @@ const experienceData=[
 
 const Experiance = () => {
   return (
-    <div>
+    <div className='container mx-auto my-5'>
         <h1 className='text-center font-bold mt-12 mb-12 text-2xl'>Experience</h1>
-        <div className=' container mx-auto'>
-        <div className='grid grid-cols-4'>
+        <div className=' '>
+        <div className='grid sm:grid-cols-1 items-center   md:grid-cols-5  gap-5'>
         {experienceData.map(item => (
-    <div key={item.id}>
+    <div className='' key={item.id}>
         <ul>
-            <li>{item.logo}</li>
-            <li>{item.skill}</li>
+            <li className='text-3xl flex justify-center'>{item.logo}</li>
+            <li className='text-center'>{item.skill}</li>
             
         </ul>
     </div>
