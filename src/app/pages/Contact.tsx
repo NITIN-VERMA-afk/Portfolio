@@ -36,7 +36,7 @@ const contactDetails=[
 
 const Contact = () => {
   return (
-    <div>
+    <div id='contact'>
         <div className='sm:rounded-sm  md:rounded-t-full bg-blue-600'>
             <h1 className='text-white text-bold text-center text-2xl'>Contact</h1>
             <div className='flex justify-around container mx-auto mt-5 pb-5 flex-wrap'>

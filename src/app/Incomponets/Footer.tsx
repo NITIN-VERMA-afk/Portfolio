@@ -3,6 +3,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const icons = [
   {
@@ -27,7 +28,12 @@ const Footer = () => {
   return (
     <div className=" flex flex-col justify-center items-center gap-4  rounded bg-blue-600 p-6">
       <div>
-        <p>nitin verma</p>
+        <p>
+        <Avatar>
+  <AvatarImage src="/img/my_pic.jpg" />
+  <AvatarFallback>NITIN VERMA</AvatarFallback>
+</Avatar>
+        </p>
       </div>
       <div>
         <p>2024-2025 all right reserved</p>
