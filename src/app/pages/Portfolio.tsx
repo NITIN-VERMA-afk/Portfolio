@@ -19,15 +19,10 @@ const ProjectData = [
 
 const Portfolio = () => {
   return (
-    <div id="portfolio" className="">
+    <div id="portfolio" className="pt-20">
       <div>
         <h1 className="text-center text-bold text-5xl">Portfolio</h1>
-        <ul className="flex justify-center align-middle gap-5 mt-4">
-          <li>Web apps</li>
-          <li>Website</li>
-          <li>Desktop</li>
-          <li>Other projects</li>
-        </ul>
+        
       </div>
       <div>
         {

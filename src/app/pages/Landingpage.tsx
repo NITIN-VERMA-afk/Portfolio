@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 
 const Home = () => {
   return (
-    <div id='Home' className=''>
+    <div id='Home' className='h-full mb-72'>
         <div className='flex flex-col flex-wrap  justify-start align-center ml-12 pt-36 gap-5'>
           <h3 className='text-5xl md:text-3xl lg-text-6xl text-gray-600'>i`m a</h3>
           <h1 className=' font-bold text-white text-5xl  md:text-5xl lg:text-6xl xl:text-7xl'>FULL STACK </h1>

@@ -31,7 +31,7 @@ const Footer = () => {
         <p>
         <Avatar>
   <AvatarImage src="/img/my_pic.jpg" />
-  <AvatarFallback>NITIN VERMA</AvatarFallback>
+  <AvatarFallback>nv</AvatarFallback>
 </Avatar>
         </p>
       </div>

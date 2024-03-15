@@ -92,7 +92,7 @@ const experienceData=[
 
 const Experiance = () => {
   return (
-    <div id='experiance' className='container mx-auto my-5'>
+    <div id='experience' className='container mx-auto pt-52'>
         <h1 className='text-center font-bold mt-12 mb-12 text-2xl'>Experience</h1>
         <div className=' '>
         <div className='grid sm:grid-cols-1 items-center   md:grid-cols-5  gap-5'>
