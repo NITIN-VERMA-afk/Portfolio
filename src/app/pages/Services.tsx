@@ -1,5 +1,5 @@
 import React from "react";
-// import Image from "next/image";
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -18,7 +18,7 @@ const cardData = [
     CardDescription: " create beautiful and attractive web apps.",
     CardContent:
       "we create beautiful attractive and responsive website and web apps according to your need ",
-    img: "https://miro.medium.com/v2/resize:fit:1200/1*V-Jp13LvtVc2IiY2fp4qYw.jpeg",
+    img: "",
     Cardfooter: "know more",
   },
   {
@@ -27,7 +27,7 @@ const cardData = [
     CardDescription: " create beautiful and attractive mobile apps",
     CardContent:
       "we  create beautiful and attractive mobile apps  for both android and ios platform",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlOpD_HHESJSrCyOpiG4R3PN_uvmmqP_t1ow&usqp=CAU",
+    img: "",
     Cardfooter: "know more",
   },
   {
@@ -36,7 +36,7 @@ const cardData = [
     CardDescription: "help increasing your seo",
     CardContent:
       "we help increasing your seo performance by optimize your website for search engines ",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxPLD8QhOcEaygicTqLhLugp_j6V4SUQ9FjQ&usqp=CAU",
+    img: "",
     Cardfooter: "know more",
   },
   {
@@ -45,7 +45,7 @@ const cardData = [
     CardDescription: "provide yearly maintenance",
     CardContent:
       "we help to fix and update your websites so they can run smoothly",
-    img: "https://images.pexels.com/photos/614117/pexels-photo-614117.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img: "",
     Cardfooter: "know more",
   },
 ];
@@ -62,7 +62,7 @@ const Services = () => {
               <CardDescription>{item.CardDescription}</CardDescription>
             </CardHeader>
             <CardContent>
-              <img src={item.img} alt="web apps" width={250} height={250} />
+              <Image src={item.img} alt="web apps" width={250} height={250} />
               <p>{item.CardContent}</p>
             </CardContent>
             <CardFooter>

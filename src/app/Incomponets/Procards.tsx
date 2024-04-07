@@ -1,5 +1,5 @@
 import React from "react";
-// import Image from "next/image";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -20,7 +20,7 @@ const projectcards = ({title,detail,tach,img}:any) => {
       </div>
       <div>
         <div className="w-64 h-52  border-8 border-blue">
-            <img className="relative bottom-50 left-7" src={img} alt="img" width={250} height={250}/>
+            <Image className="relative bottom-50 left-7" src={img} alt="img" width={250} height={250}/>
             
         </div>
       </div>
