@@ -1,7 +1,10 @@
+"use client"
 import { Button } from "@/components/ui/button";
+import React, { useState } from 'react'; 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="w-full h-12 bg-blue-600 rounded-md sticky top-0">
@@ -11,9 +14,10 @@ const Navbar: React.FC = () => {
             <AvatarImage src="/img/my_pic.jpg" />
             <AvatarFallback>nv</AvatarFallback>
           </Avatar>
+          
 
-          <ul className="hidden md:flex gap-x-6 text-white cursor-pointer">
-            <li>
+          <ul className="hidden  md:flex gap-x-6 text-white cursor-pointer">
+            <li className="hover:bg-yellow-500">
               <a href="#home">Home</a>
             </li>
             <li>

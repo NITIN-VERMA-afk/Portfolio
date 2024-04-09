@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { FaPhoneSquareAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -46,9 +47,9 @@ const Contact: React.FC = () => {
   };
   return (
     <div id="contact" className="pt-52">
-      <div className="sm:rounded-sm  md:rounded-t-full bg-blue-600">
+      <div className="sm:rounded-sm  md:rounded-sm bg-blue-600">
         <h1 className="text-white text-bold text-center text-2xl">Contact</h1>
-        <div className="flex justify-around container mx-auto mt-5 pb-5 flex-wrap">
+        <div className="flex justify-around container mx-auto mt-5 pb-5  gap-4 flex-wrap">
           <div className="flex flex-col gap-5">
             <h1>Drop me a message</h1>
             <p className="">contact me on follow details</p>
@@ -63,8 +64,14 @@ const Contact: React.FC = () => {
               </div>
             ))}
           </div>
-          <div className=" flex flex-col gap-5 bg-blue-900 p-8 rounded-md ">
-            <form onSubmit={handleSubmit(onSubmit)}>
+          <div className=" ">
+            <form className="flex flex-col gap-5 bg-blue-900 p-8 rounded-md " onSubmit={handleSubmit(onSubmit)}>
+              <Input
+                {...register("name")}
+                className="bg-black text-white"
+                type="text"
+                placeholder="Enter your name"
+              />
               <Input
                 {...register("email")}
                 className="bg-black text-white"
@@ -92,4 +99,3 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
-
