@@ -51,12 +51,13 @@ const Contact: React.FC = () => {
         <h1 className="text-white text-bold text-center text-2xl font-bold">Contact</h1>
         <div className="flex justify-around container mx-auto mt-5 pb-5  gap-4 flex-wrap">
           <div className="flex flex-col gap-5">
-            <h1>Drop me a message</h1>
-            <p className="">contact me on follow details</p>
+            <h1 className="font-bold">Drop me a message</h1>
+            <p className="text-white">contact me on follow details</p>
             {contactDetails.map((item) => (
               <div key={item.id}>
                 <ul className="flex gap-5">
-                  <li className="w-12 h-12 border border-gray-300 bg-gradient-to-br from-blue-600 to-blue-500 rounded flex justify-center items-center">
+                  <li className="w-12 h-12 border bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-100 hover:to-purple-500 transition-colors rounded flex justify-center items-center">
+                  
                     {item.icon}
                   </li>
                   <li>{item.details}</li>

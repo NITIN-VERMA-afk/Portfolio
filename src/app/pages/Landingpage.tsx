@@ -1,8 +1,25 @@
-import React from "react";
+"use client"
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+
 
 const Home = () => {
+  const [text, setText] = useState('software');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setText(prevText => {
+        if (prevText === 'software') {
+          return 'web';
+        } else {
+          return 'software';
+        }
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div
       id="home"
@@ -16,7 +33,7 @@ const Home = () => {
           FULL STACK
         </h1>
         <h1 className="font-bold text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-          Software
+          {text}
         </h1>
         <h1 className="font-bold text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
           Developer.
@@ -27,9 +44,9 @@ const Home = () => {
           </Button>
         </div>
       </div>
-     
     </div>
   );
 };
 
 export default Home;
+

@@ -41,7 +41,9 @@ const Navbar: React.FC = () => {
             <li>
               <a
                 onClick={() => handleClick("portfolio")}
-                className={` ${activeAnchor === "portfolio" ? "text-black" : ""}`}
+                className={` ${
+                  activeAnchor === "portfolio" ? "text-black" : ""
+                }`}
                 href="#portfolio"
               >
                 Portfolio
@@ -49,8 +51,10 @@ const Navbar: React.FC = () => {
             </li>
             <li>
               <a
-                 onClick={() => handleClick("services")}
-                 className={` ${activeAnchor === "services" ? "text-black" : ""}`}
+                onClick={() => handleClick("services")}
+                className={` ${
+                  activeAnchor === "services" ? "text-black" : ""
+                }`}
                 href="#services"
               >
                 Services
@@ -59,7 +63,9 @@ const Navbar: React.FC = () => {
             <li>
               <a
                 onClick={() => handleClick("experience")}
-                className={` ${activeAnchor === "experience" ? "text-black" : ""}`}
+                className={` ${
+                  activeAnchor === "experience" ? "text-black" : ""
+                }`}
                 href="#experience"
               >
                 Experience

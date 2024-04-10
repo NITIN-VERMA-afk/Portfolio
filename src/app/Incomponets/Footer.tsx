@@ -4,6 +4,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import Link from "next/link"
 
 const icons = [
   {
@@ -36,13 +37,13 @@ const Footer = () => {
         </p>
       </div>
       <div>
-        <p>2024-2025 all right reserved</p>
+      <p>&copy; 2024 Nitin Verma. All rights reserved.</p>
       </div>
       <div className="flex gap-4 ">
         {icons.map((item) => (
           <div className="w-12 h-12 border border-gray-300 bg-gradient-to-br from-blue-600 to-blue-500 rounded flex justify-center items-center" key={item.id}>
-            <ul>
-              <li>{item.icon}</li>
+            <ul  className="w-12 h-12 border bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-100 hover:to-purple-500 transition-colors rounded flex justify-center items-center">
+              <li className={` hover:to-purple-500 transition-colors`}>{item.icon}</li>
             </ul>
           </div>
         ))}

@@ -46,7 +46,8 @@ const Services = () => {
       <h1 className="text-center font-bold text-4xl my-7">Services</h1>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {cardData.map((item) => (
-          <Card className="flex flex-col h-full" key={item.id}>
+         
+          <Card className="flex flex-col h-full  " key={item.id}>
             <CardHeader>
               <CardTitle>{item.CardTitle}</CardTitle>
               <CardDescription>{item.CardDescription}</CardDescription>
@@ -63,6 +64,7 @@ const Services = () => {
               </Button>
             </CardFooter>
           </Card>
+          
         ))}
       </div>
     </div>
