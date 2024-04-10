@@ -47,8 +47,8 @@ const Contact: React.FC = () => {
   };
   return (
     <div id="contact" className="pt-52">
-      <div className="sm:rounded-sm  md:rounded-sm bg-blue-600">
-        <h1 className="text-white text-bold text-center text-2xl">Contact</h1>
+      <div className="sm:rounded-sm  md:rounded-sm lg:rounded-lg bg-blue-600">
+        <h1 className="text-white text-bold text-center text-2xl font-bold">Contact</h1>
         <div className="flex justify-around container mx-auto mt-5 pb-5  gap-4 flex-wrap">
           <div className="flex flex-col gap-5">
             <h1>Drop me a message</h1>

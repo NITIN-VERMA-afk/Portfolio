@@ -24,7 +24,7 @@ const Portfolio = () => {
   return (
     <div id="portfolio" className="pt-20">
       <div>
-        <h1 className="text-center text-bold text-5xl">Portfolio</h1>
+        <h1 className="text-center font-bold text-5xl">Portfolio</h1>
         
       </div>
       <div>
