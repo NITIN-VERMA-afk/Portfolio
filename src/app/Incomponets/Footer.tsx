@@ -10,18 +10,22 @@ const icons = [
   {
     id: 1,
     icon: <FaLinkedin />,
+    url:"https://www.linkedin.com/in/nitin-verma-7978b51b8/"
   },
   {
     id: 2,
     icon: <FaGithub />,
+    url:"https://github.com/NITIN-VERMA-afk"
   },
   {
     id: 3,
     icon: <FaXTwitter />,
+    url:"https://twitter.com/RAJPUT_NITIN_V"
   },
   {
     id: 4,
     icon: <FaInstagram />,
+    url:"https://www.instagram.com/coder_s_nest/"
   },
 ];
 
@@ -43,7 +47,7 @@ const Footer = () => {
         {icons.map((item) => (
           <div className="w-12 h-12 border border-gray-300 bg-gradient-to-br from-blue-600 to-blue-500 rounded flex justify-center items-center" key={item.id}>
             <ul  className="w-12 h-12 border bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-100 hover:to-purple-500 transition-colors rounded flex justify-center items-center">
-              <li className={` hover:to-purple-500 transition-colors`}>{item.icon}</li>
+              <li className={` hover:to-purple-500 transition-colors`}> <Link href={item.url}> {item.icon}</Link>   </li>
             </ul>
           </div>
         ))}
