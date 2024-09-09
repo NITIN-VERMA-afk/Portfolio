@@ -41,7 +41,7 @@ const Experience = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <p className="text-white"> With a diverse skill set spanning frontend and backend technologies, I bring a comprehensive approach to web development. Here's a snapshot of my technical proficiencies: </p>
+          <p className="text-white"> With a diverse skill set spanning frontend and backend technologies, I bring a comprehensive approach to web development. Here&apos;s a snapshot of my technical proficiencies: </p>
          
         </motion.p>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">

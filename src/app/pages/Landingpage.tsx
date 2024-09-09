@@ -25,7 +25,7 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
         >
-          I'm
+          I&apos;m
         </motion.h3>
         <motion.h1
           className="font-bold text-white text-3xl sm:text-4xl lg:text-5xl xl:text-6xl flex items-center gap-2"
@@ -51,7 +51,7 @@ const Home = () => {
         >
           <Button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
             <a href="#contact" className="flex items-center gap-2">
-              Let's work together <FaHandsHelping />
+              Let&apos;s work together <FaHandsHelping />
             </a>
           </Button>
         </motion.div>

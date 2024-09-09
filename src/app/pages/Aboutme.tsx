@@ -25,7 +25,7 @@ const AboutMe = () => {
             height={100}
             className="rounded-full mb-4"
           />
-          <h2 className="text-xl font-semibold mb-2">Hi, I'm Nitin Verma</h2>
+          <h2 className="text-xl font-semibold mb-2">Hi, I&apos;m Nitin Verma</h2>
           <p className="">
           With over 5 years of experience, I have refined my skills in software development, specializing in creating dynamic and responsive web apps.
           </p>
@@ -61,7 +61,7 @@ const AboutMe = () => {
         >
           <h2 className="text-xl font-semibold mb-2">Flexible with time zones & locations</h2>
           <p className=" mb-4">
-            I'm based in bilaspur, Himachal Pardesh and open to remote work worldwide.
+            I&apos;m based in bilaspur, Himachal Pardesh and open to remote work worldwide.
           </p>
           <Button  className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
             Contact Me
@@ -77,7 +77,7 @@ const AboutMe = () => {
         >
           <h2 className="text-xl font-semibold mb-2">My Passion for Coding</h2>
           <p className="">
-            I love solving problems and building things through code. Programming isn't just my profession—it's my passion. I enjoy exploring new technologies and enhancing my skills.
+            I love solving problems and building things through code. Programming isn&apos;t just my profession—it&apos;s my passion. I enjoy exploring new technologies and enhancing my skills.
           </p>
         </motion.div>
 

@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
             <div className="bg-blue-600 rounded-lg shadow-lg p-8">
               <h3 className="text-2xl font-semibold text-white mb-6">Contact Information</h3>
               <p className="text-white mb-8">
-                I'm here to assist you with your web development needs. Whether you're looking to create a new website, enhance an existing one, or bring a unique project to life, let's discuss how we can work together to achieve your goals.
+                I&apos;m here to assist you with your web development needs. Whether you&apos;re looking to create a new website, enhance an existing one, or bring a unique project to life, let&apos;s discuss how we can work together to achieve your goals.
               </p>
               <ul className="space-y-6">
                 {contactDetails.map(({ icon: Icon, label, value }, index) => (
