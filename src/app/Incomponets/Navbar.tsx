@@ -1,84 +1,92 @@
-"use client";
+"use client"
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Menu, X } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const [activeAnchor, setActiveAnchor] = useState<string | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleClick = (id: string) => {
     setActiveAnchor(id);
+    setIsMenuOpen(false);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const navItems = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "portfolio", label: "Portfolio" },
+    { id: "services", label: "Services" },
+    { id: "experience", label: "Experience" },
+  ];
+
   return (
-    <div className="w-full h-12 bg-blue-600  sticky top-0">
-      <div className="container mx-auto px-4 h-full">
-        <div className="flex justify-between items-center h-full">
-          <Avatar>
-            <AvatarImage src="/img/my_pic.jpg" />
-            <AvatarFallback>nv</AvatarFallback>
-          </Avatar>
+    <nav className="w-full bg-blue-600 text-white sticky top-0 z-10">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center h-16">
+          <div className="flex items-center">
+            <Avatar className="cursor-pointer">
+              <AvatarImage src="/img/my_pic.jpg" alt="Profile" />
+              <AvatarFallback>NV</AvatarFallback>
+            </Avatar>
+          </div>
 
-          <ul className="hidden  md:flex gap-x-6 text-white cursor-pointer">
-            <li className="">
+          <div className="hidden md:flex items-center space-x-4">
+            {navItems.map((item) => (
               <a
-                href="#home"
-                onClick={() => handleClick("home")}
-                className={` ${activeAnchor === "home" ? "text-black" : ""}`}
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                onClick={() => handleClick("about")}
-                className={` ${activeAnchor === "about" ? "text-black" : ""}`}
-                href="#about"
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                onClick={() => handleClick("portfolio")}
-                className={` ${
-                  activeAnchor === "portfolio" ? "text-black" : ""
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={() => handleClick(item.id)}
+                className={`hover:text-gray-300 transition-colors ${
+                  activeAnchor === item.id ? "text-blue-200" : ""
                 }`}
-                href="#portfolio"
               >
-                Portfolio
+                {item.label}
               </a>
-            </li>
-            <li>
-              <a
-                onClick={() => handleClick("services")}
-                className={` ${
-                  activeAnchor === "services" ? "text-black" : ""
-                }`}
-                href="#services"
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                onClick={() => handleClick("experience")}
-                className={` ${
-                  activeAnchor === "experience" ? "text-black" : ""
-                }`}
-                href="#experience"
-              >
-                Experience
-              </a>
-            </li>
-          </ul>
+            ))}
+            <Button className="bg-white text-blue-600 hover:bg-blue-100 font-medium rounded-lg text-sm px-5 py-2.5 transition-colors">
+              <a href="#contact">Contact</a>
+            </Button>
+          </div>
 
-          <Button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-            <a href="#contact">Contact</a>
-          </Button>
+          <div className="md:hidden">
+            {isMenuOpen ? (
+              <X className="cursor-pointer" onClick={toggleMenu} />
+            ) : (
+              <Menu className="cursor-pointer" onClick={toggleMenu} />
+            )}
+          </div>
         </div>
+
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              {navItems.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={() => handleClick(item.id)}
+                  className={`block px-3 py-2 rounded-md text-base font-medium hover:text-blue-200 hover:bg-blue-700 transition-colors ${
+                    activeAnchor === item.id ? "bg-blue-700 text-white" : "text-blue-200"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <Button className="w-full mt-4 bg-white text-blue-600 hover:bg-blue-100 font-medium rounded-lg text-sm px-5 py-2.5 transition-colors">
+                <a href="#contact">Contact</a>
+              </Button>
+            </div>
+          </div>
+        )}
       </div>
-    </div>
+    </nav>
   );
 };
 

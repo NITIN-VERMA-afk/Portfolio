@@ -1,73 +1,102 @@
+"use client"
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FaArrowRight } from "react-icons/fa";
-import Link from "next/link"
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const cardData = [
   {
     id: 1,
-    CardTitle: "web app development",
-    CardDescription: " create beautiful and attractive web apps.",
-    CardContent: "we create beautiful attractive and responsive website and web apps according to your need ",
-    img: "/img/web dev.webp",
-    Cardfooter: "know more",
+    title: "Web App Development",
+    description: "Create beautiful and attractive web apps",
+    content: "We create beautiful, attractive, and responsive websites and web apps tailored to your specific needs.",
+    image: "/img/web dev.webp",
+    link: "/services/web-development",
   },
   {
     id: 2,
-    CardTitle: "app development",
-    CardDescription: " create beautiful and attractive mobile apps",
-    CardContent: "we create beautiful and attractive mobile apps for both android and ios platform",
-    img: "/img/app.avif",
-    Cardfooter: "know more",
+    title: "Mobile App Development",
+    description: "Develop engaging mobile apps for iOS and Android",
+    content: "Our team crafts beautiful and intuitive mobile applications for both Android and iOS platforms.",
+    image: "/img/app.avif",
+    link: "/services/mobile-development",
   },
   {
     id: 3,
-    CardTitle: "SEO",
-    CardDescription: "help increasing your seo",
-    CardContent: "we help increasing your seo performance by optimize your website for search engines ",
-    img: "/img/SEOog.avif",
-    Cardfooter: "know more",
+    title: "Search Engine Optimization",
+    description: "Boost your online visibility",
+    content: "We help improve your SEO performance by optimizing your website for search engines, increasing your online presence.",
+    image: "/img/SEOog.avif",
+    link: "/services/seo",
   },
   {
     id: 4,
-    CardTitle: "maintenance",
-    CardDescription: "provide yearly maintenance",
-    CardContent: "we help to fix and update your websites so they can run smoothly",
-    img: "/img/seo.webp",
-    Cardfooter: "know more",
+    title: "Website Maintenance",
+    description: "Keep your website running smoothly",
+    content: "Our maintenance services ensure your websites stay up-to-date, secure, and perform optimally.",
+    image: "/img/seo.webp",
+    link: "/services/maintenance",
   },
 ];
 
+const ServiceCard = ({ title, description, content, image, link }:any) => (
+  <Card className="flex flex-col h-full transition-shadow hover:shadow-lg bg-blue-600">
+    <CardHeader>
+      <CardTitle className="text-xl font-semibold text-white">{title}</CardTitle>
+      <CardDescription className="text-white">{description}</CardDescription>
+    </CardHeader>
+    <CardContent className="flex-1">
+      <div className="relative h-48 mb-4 overflow-hidden rounded-md">
+        <Image 
+          src={image} 
+          alt={title} 
+          layout="fill" 
+          objectFit="cover"
+          className="transition-transform duration-300 ease-in-out hover:scale-105"
+        />
+      </div>
+      <p className="text-sm text-white">{content}</p>
+    </CardContent>
+    <CardFooter>
+      <Link href={link} passHref>
+        <Button className="w-full bg-blue-700 group">
+          Learn More
+          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+        </Button>
+      </Link>
+    </CardFooter>
+  </Card>
+);
+
 const Services = () => {
   return (
-    <div id="services" className="container pt-24">
-      <h1 className="text-center font-bold text-4xl my-7">Services</h1>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {cardData.map((item) => (
-         
-          <Card className="flex flex-col h-full  " key={item.id}>
-            <CardHeader>
-              <CardTitle>{item.CardTitle}</CardTitle>
-              <CardDescription>{item.CardDescription}</CardDescription>
-            </CardHeader>
-            <CardContent className="flex-1">
-              <div className="relative h-48">
-                <Image src={item.img} alt="web apps" layout="fill" objectFit="cover" />
-              </div>
-              <p>{item.CardContent}</p>
-            </CardContent>
-            <CardFooter>
-              <Button className="w-32">
-                <FaArrowRight /> <Link href="/cooming">Know more </Link>
-              </Button>
-            </CardFooter>
-          </Card>
-          
-        ))}
+    <section id="services" className="py-16 bg-blue-400">
+      <div className="container mx-auto px-4">
+        <motion.h2
+          className="text-center font-bold text-3xl md:text-4xl text-white mb-12"
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          Our Services
+        </motion.h2>
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+          {cardData.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
+            >
+              <ServiceCard {...item} />
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

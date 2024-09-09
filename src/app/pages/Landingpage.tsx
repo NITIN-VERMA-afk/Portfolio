@@ -1,52 +1,77 @@
-"use client"
-import React, { useState, useEffect } from "react";
+/* eslint-disable react/no-unescaped-entities */
+"use client";
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-
+import { FaHandsHelping } from "react-icons/fa";
+import { FaRegHandPeace } from "react-icons/fa6";
 
 const Home = () => {
-  const [text, setText] = useState('software');
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setText(prevText => {
-        if (prevText === 'software') {
-          return 'web';
-        } else {
-          return 'software';
-        }
-      });
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div
       id="home"
-      className="h-full mb-72 flex flex-col justify-start lg:flex-row "
+      className="min-h-screen w-full px-4 sm:px-6 lg:px-8 py-12 lg:py-24 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16"
     >
-      <div className="flex flex-col justify-start lg:items-start pt-36 gap-5 ml-12">
-        <h3 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-600">
-          Im a
-        </h3>
-        <h1 className="font-bold text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-          FULL STACK
-        </h1>
-        <h1 className="font-bold text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-          {text}
-        </h1>
-        <h1 className="font-bold text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-          Developer.
-        </h1>
-        <div className="mt-6 ml-12">
-          <Button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5">
-            <a href="#portfolio">Previous Projects</a>
+      <motion.div
+        className="flex flex-col items-center lg:items-start gap-4 text-center lg:text-left"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.h3
+          className="text-2xl sm:text-3xl lg:text-4xl text-gray-600"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+        >
+          I'm
+        </motion.h3>
+        <motion.h1
+          className="font-bold text-white text-3xl sm:text-4xl lg:text-5xl xl:text-6xl flex items-center gap-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+        >
+          NITIN VERMA <FaRegHandPeace className="inline-block" />
+        </motion.h1>
+        <motion.h1
+          className="font-bold text-white text-2xl sm:text-3xl lg:text-4xl xl:text-5xl mt-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+        >
+          Building products and brands
+        </motion.h1>
+        <motion.div
+          className="mt-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
+        >
+          <Button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
+            <a href="#contact" className="flex items-center gap-2">
+              Let's work together <FaHandsHelping />
+            </a>
           </Button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
+      <motion.div
+        className="mt-12 lg:mt-0"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.4, duration: 0.8 }}
+      >
+        <Image
+          src="/img/img1.avif"
+          alt="Developer"
+          width={500}
+          height={500}
+          className="rounded-lg shadow-lg max-w-full h-auto"
+        />
+      </motion.div>
     </div>
   );
 };
 
 export default Home;
-

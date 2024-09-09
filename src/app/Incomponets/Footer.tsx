@@ -41,7 +41,7 @@ const Footer = () => {
         </p>
       </div>
       <div>
-      <p>&copy; 2024 Nitin Verma. All rights reserved.</p>
+      <p className="text-white">&copy; 2024 Nitin Verma. All rights reserved.</p>
       </div>
       <div className="flex gap-4 ">
         {icons.map((item) => (
