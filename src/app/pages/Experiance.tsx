@@ -27,15 +27,15 @@ const Experience = () => {
   return (
     <div id="experience" className="bg-blue-400 py-20">
       <div className="container mx-auto px-4">
-        <motion.h1 
+        <motion.div 
           className="text-center font-bold mb-12 text-4xl text-gray-800"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           <p className="text-white"> Technical Expertise</p> 
-        </motion.h1>
-        <motion.p 
+        </motion.div>
+        <motion.div 
           className="text-center text-xl mb-12 text-gray-600 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ const Experience = () => {
         >
           <p className="text-white"> With a diverse skill set spanning frontend and backend technologies, I bring a comprehensive approach to web development. Here&apos;s a snapshot of my technical proficiencies: </p>
          
-        </motion.p>
+        </motion.div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {experienceData.map((item, index) => (
             <motion.div

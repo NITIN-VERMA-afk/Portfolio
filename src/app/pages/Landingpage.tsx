@@ -33,7 +33,7 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          NITIN VERMA <FaRegHandPeace className="inline-block" />
+          NITIN VERMA <FaRegHandPeace className="inline-block text-yellow-500" />
         </motion.h1>
         <motion.h1
           className="font-bold text-white text-2xl sm:text-3xl lg:text-4xl xl:text-5xl mt-4"
