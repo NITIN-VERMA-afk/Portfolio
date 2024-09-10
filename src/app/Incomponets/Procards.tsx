@@ -17,7 +17,7 @@ const projectcards = ({ title, detail, tach, img,project }: any) => {
       </div>
       <div className="w-full md:w-1/2 lg:w-1/2 flex justify-center">
         <div className="w-64 h-52 md:w-80 md:h-64 lg:w-96 lg:h-72 border-8 border-blue relative">
-          <Image src={img} alt="img" layout="fill" objectFit="cover" />
+          <Image src={img} alt="img"    layout="fill" objectFit="cover" />
         </div>
       </div>
     </div>

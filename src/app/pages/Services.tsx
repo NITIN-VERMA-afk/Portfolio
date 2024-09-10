@@ -138,6 +138,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         <Image
           src={image}
           alt={title}
+          
           layout="fill"
           objectFit="cover"
           className="transition-transform duration-300 ease-in-out hover:scale-105"

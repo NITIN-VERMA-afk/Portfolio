@@ -64,7 +64,7 @@ const AboutMe = () => {
             I&apos;m based in bilaspur, Himachal Pardesh and open to remote work worldwide.
           </p>
           <Button  className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
-            Contact Me
+          <a href="#contact">Contact me</a>
           </Button>
         </motion.div>
 
@@ -88,7 +88,7 @@ const AboutMe = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          <h2 className="text-xl font-semibold mb-4 text-gray-300">Contact me</h2>
+          <h2 className="text-xl font-semibold mb-4 text-gray-300"> <a href="#contact">Contact me</a> </h2>
           <p className=" mb-2">nitinvermanv61506@gmail.com</p>
           <div className="flex justify-center space-x-2">
             {[9, 0, 1, 5, 3,0,8,8,8,1].map((num) => (
