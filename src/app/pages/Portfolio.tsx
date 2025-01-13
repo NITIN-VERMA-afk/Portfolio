@@ -35,6 +35,14 @@ const ProjectData: ProjectData[] = [
   },
   {
     id: 3,
+    title: "jmjStudio",
+    detail: "wedding photography studio website",
+    tech: "Next js",
+    img: "/img/jmj.png",
+    project: "https://jmjstudio.vercel.app"
+  },
+  {
+    id: 4,
     title: "FitQuest",
     detail: "A comprehensive fitness app - your solution for all fitness challenges.",
     tech: "MERN",
