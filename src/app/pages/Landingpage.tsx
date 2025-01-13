@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div
       id="home"
-      className="min-h-screen w-full px-4 sm:px-6 lg:px-8 py-12 lg:py-24 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16"
+      className="min-h-screen w-full px-4 sm:px-2 lg:px-8 py-2 sm:py-4 lg:py-24 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16"
     >
       <motion.div
         className="flex flex-col items-center lg:items-start gap-4 text-center lg:text-left"
