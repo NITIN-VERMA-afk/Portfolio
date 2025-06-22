@@ -4,6 +4,7 @@ import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
 import Experince from "./pages/Experiance";
 import Contact from "./pages/Contact";
+import CertificateShowcase from "./pages/CertificateShowcase";
 
 export default function Home() {
   return (
@@ -12,6 +13,8 @@ export default function Home() {
         <Landingpage />
         <Aboutme />
         <Portfolio />
+        <CertificateShowcase />
+
         <Services />
         <Experince />
         <Contact />
