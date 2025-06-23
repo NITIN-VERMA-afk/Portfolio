@@ -53,11 +53,11 @@ const Home = () => {
     }
   };
 
-  // Developer SVG Component
+  // Developer SVG Component - Made more responsive
   const DeveloperSVG = () => (
     <svg
       viewBox="0 0 500 500"
-      className="w-full h-auto"
+      className="w-full h-auto max-w-full"
       xmlns="http://www.w3.org/2000/svg"
     >
       {/* Background Circle */}
@@ -273,10 +273,10 @@ const Home = () => {
       id="home"
       className="min-h-screen w-full relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600"
     >
-      {/* Animated Background Elements */}
+      {/* Animated Background Elements - Responsive positioning */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute top-20 left-20 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"
+          className="absolute top-10 left-4 sm:top-20 sm:left-20 w-48 h-48 sm:w-72 sm:h-72 bg-blue-400/10 rounded-full blur-3xl"
           animate={{
             x: mousePosition.x * 0.02,
             y: mousePosition.y * 0.02,
@@ -284,7 +284,7 @@ const Home = () => {
           transition={{ type: "spring", stiffness: 50, damping: 20 }}
         />
         <motion.div
-          className="absolute bottom-20 right-20 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl"
+          className="absolute bottom-10 right-4 sm:bottom-20 sm:right-20 w-64 h-64 sm:w-96 sm:h-96 bg-purple-400/10 rounded-full blur-3xl"
           animate={{
             x: mousePosition.x * -0.01,
             y: mousePosition.y * -0.01,
@@ -292,14 +292,14 @@ const Home = () => {
           transition={{ type: "spring", stiffness: 30, damping: 20 }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-400/5 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-[600px] sm:h-[600px] bg-cyan-400/5 rounded-full blur-3xl"
           animate={{ rotate: 360 }}
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
         />
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Floating Elements - Hidden on very small screens */}
+      <div className="absolute inset-0 pointer-events-none hidden sm:block">
         <motion.div
           className="absolute top-1/4 left-1/4 text-blue-300/20"
           animate={floatAnimation}
@@ -320,26 +320,26 @@ const Home = () => {
         </motion.div>
       </div>
 
-      {/* Main Content */}
+      {/* Main Content - Improved responsive spacing */}
       <motion.div
-        className="relative z-10 min-h-screen px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-24 flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20"
+        className="relative z-10 min-h-screen px-4 sm:px-6 lg:px-8 py-4 sm:py-8 lg:py-12 xl:py-24 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 xl:gap-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* Text Content */}
-        <div className="flex-1 flex flex-col items-center lg:items-start gap-6 text-center lg:text-left max-w-2xl">
+        {/* Text Content - Better responsive handling */}
+        <div className="flex-1 flex flex-col items-center lg:items-start gap-4 sm:gap-6 text-center lg:text-left max-w-full lg:max-w-2xl">
           <motion.div variants={itemVariants} className="space-y-2">
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 backdrop-blur-sm rounded-full border border-blue-400/30 mb-4"
+              className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-500/20 backdrop-blur-sm rounded-full border border-blue-400/30 mb-2 sm:mb-4"
               whileHover={{ scale: 1.05 }}
             >
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-blue-100 text-sm font-medium">Available for work</span>
+              <span className="text-blue-100 text-xs sm:text-sm font-medium">Available for work</span>
             </motion.div>
             
             <motion.h3
-              className="text-2xl sm:text-3xl lg:text-4xl text-blue-200 font-light"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-blue-200 font-light"
               variants={itemVariants}
             >
               Hello, I'm
@@ -347,23 +347,23 @@ const Home = () => {
           </motion.div>
 
           <motion.h1
-            className="font-bold text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight"
+            className="font-bold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight max-w-full"
             variants={itemVariants}
           >
-            <span className="bg-gradient-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent break-words">
               NITIN VERMA
             </span>
             <motion.span
-              className="inline-block ml-4"
+              className="inline-block ml-2 sm:ml-4"
               animate={{ rotate: [0, 20, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
-              <FaRegHandPeace className="text-yellow-400 text-4xl lg:text-5xl" />
+              <FaRegHandPeace className="text-yellow-400 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl" />
             </motion.span>
           </motion.h1>
 
-          <motion.div variants={itemVariants} className="space-y-4">
-            <h2 className="font-bold text-white text-2xl sm:text-3xl lg:text-4xl xl:text-5xl">
+          <motion.div variants={itemVariants} className="space-y-3 sm:space-y-4 max-w-full">
+            <h2 className="font-bold text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-tight">
               <span className="text-blue-200">Building</span>{" "}
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 products
@@ -373,15 +373,15 @@ const Home = () => {
                 brands
               </span>
             </h2>
-            <p className="text-blue-100 text-lg lg:text-xl leading-relaxed max-w-xl">
+            <p className="text-blue-100 text-base sm:text-lg lg:text-xl leading-relaxed max-w-full lg:max-w-xl">
               Full-stack developer passionate about creating innovative digital experiences 
               that make a difference. Let's bring your ideas to life!
             </p>
           </motion.div>
 
-          {/* Social Links */}
-          <motion.div variants={itemVariants} className="flex items-center gap-4 mt-6">
-            <div className="flex items-center gap-3">
+          {/* Social Links - Responsive sizing */}
+          <motion.div variants={itemVariants} className="flex items-center gap-3 sm:gap-4 mt-4 sm:mt-6">
+            <div className="flex items-center gap-2 sm:gap-3">
               {[
                 { icon: FaGithub, href: "https://github.com/NITIN-VERMA-afk", label: "GitHub" },
                 { icon: FaLinkedin, href: "#", label: "LinkedIn" },
@@ -392,26 +392,26 @@ const Home = () => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-blue-500/20 backdrop-blur-sm rounded-full border border-blue-400/30 flex items-center justify-center text-blue-200 hover:text-white hover:bg-blue-500/30 transition-all duration-300"
+                  className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500/20 backdrop-blur-sm rounded-full border border-blue-400/30 flex items-center justify-center text-blue-200 hover:text-white hover:bg-blue-500/30 transition-all duration-300"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={label}
                 >
-                  <Icon size={20} />
+                  <Icon size={16} className="sm:w-5 sm:h-5" />
                 </motion.a>
               ))}
             </div>
           </motion.div>
 
-          {/* CTA Buttons */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mt-8">
+          {/* CTA Buttons - Better responsive behavior */}
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 w-full sm:w-auto">
             <Button 
               asChild
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
             >
               <motion.a 
                 href="#contact" 
-                className="flex items-center gap-3"
+                className="flex items-center justify-center gap-2 sm:gap-3"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -420,7 +420,7 @@ const Home = () => {
                   animate={{ x: [0, 4, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 >
-                  <FaHandsHelping />
+                  <FaHandsHelping className="text-sm sm:text-base" />
                 </motion.div>
               </motion.a>
             </Button>
@@ -428,64 +428,64 @@ const Home = () => {
             <Button 
               asChild
               variant="outline" 
-              className="border-blue-400 bg-blue-500/20 hover:bg-blue-500/30 text-white hover:text-white px-8 py-6 text-lg font-semibold backdrop-blur-sm"
+              className="border-blue-400 bg-blue-500/20 hover:bg-blue-500/30 text-white hover:text-white px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg font-semibold backdrop-blur-sm w-full sm:w-auto"
             >
               <motion.a 
                 href="#portfolio" 
-                className="flex items-center gap-3"
+                className="flex items-center justify-center gap-2 sm:gap-3"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 View My Work
-                <ArrowDown size={20} />
+                <ArrowDown size={16} className="sm:w-5 sm:h-5" />
               </motion.a>
             </Button>
           </motion.div>
         </div>
 
-        {/* SVG Section */}
+        {/* SVG Section - Much better responsive handling */}
         <motion.div
-          className="flex-1 max-w-lg"
+          className="flex-1 w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl"
           variants={itemVariants}
         >
           <motion.div
-            className="relative"
+            className="relative w-full"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
-            {/* Decorative Elements */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-3xl blur-2xl"></div>
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full opacity-20 blur-xl"></div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full opacity-20 blur-xl"></div>
+            {/* Decorative Elements - Responsive sizing */}
+            <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-2xl sm:rounded-3xl blur-xl sm:blur-2xl"></div>
+            <div className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full opacity-20 blur-lg sm:blur-xl"></div>
+            <div className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full opacity-20 blur-lg sm:blur-xl"></div>
             
-            {/* Main SVG */}
+            {/* Main SVG - Better containment */}
             <motion.div
-              className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-2 border-blue-400/20 bg-gradient-to-br from-slate-900/50 to-slate-800/50 backdrop-blur-sm p-6"
+              className="relative z-10 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl border-2 border-blue-400/20 bg-gradient-to-br from-slate-900/50 to-slate-800/50 backdrop-blur-sm p-3 sm:p-6"
               animate={floatAnimation}
             >
               <DeveloperSVG />
               
               {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 to-transparent rounded-3xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 to-transparent rounded-2xl sm:rounded-3xl"></div>
             </motion.div>
 
-            {/* Floating Badge */}
+            {/* Floating Badge - Responsive positioning and sizing */}
             <motion.div
-              className="absolute -bottom-4 -right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full shadow-lg border-2 border-white/20 backdrop-blur-sm z-20"
+              className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-lg border-2 border-white/20 backdrop-blur-sm z-20"
               initial={{ scale: 0, rotate: -180 }}
               animate={{ scale: 1, rotate: 0 }}
               transition={{ delay: 1.2, duration: 0.5, type: "spring" }}
               whileHover={{ scale: 1.1 }}
             >
-              <span className="font-semibold text-sm">Available</span>
+              <span className="font-semibold text-xs sm:text-sm">Available</span>
             </motion.div>
           </motion.div>
         </motion.div>
       </motion.div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Hidden on very small screens */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 hidden sm:block"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 0.8 }}

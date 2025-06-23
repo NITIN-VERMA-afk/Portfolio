@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -126,11 +126,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   image,
   onCardClick,
 }) => (
-  <Card className="flex flex-col h-full transition-shadow hover:shadow-lg bg-blue-600">
+  <Card className="flex flex-col h-full min-h-[500px] transition-shadow hover:shadow-lg bg-blue-600">
     <CardHeader>
-      <CardTitle className="text-xl font-semibold text-white">
-        {title}
-      </CardTitle>
+      <CardTitle className="text-xl font-semibold text-white">{title}</CardTitle>
       <CardDescription className="text-white">{description}</CardDescription>
     </CardHeader>
     <CardContent className="flex-1">
@@ -138,10 +136,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         <Image
           src={image}
           alt={title}
-          
-          layout="fill"
-          objectFit="cover"
-          className="transition-transform duration-300 ease-in-out hover:scale-105"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover transition-transform duration-300 ease-in-out hover:scale-105"
         />
       </div>
       <p className="text-sm text-white">{content}</p>
@@ -164,8 +161,8 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service, onClose }) => 
   if (!service) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-      <div className="bg-blue-600 text-white p-8 rounded-lg w-full max-w-md relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 p-4 overflow-y-auto">
+      <div className="bg-blue-600 text-white p-6 sm:p-8 rounded-lg w-full max-w-lg relative">
         <Button
           className="absolute top-2 right-2 p-1"
           variant="ghost"
@@ -173,10 +170,10 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service, onClose }) => 
         >
           <X className="h-6 w-6" />
         </Button>
-        <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-        <p className="mb-4">{service.challenge}</p>
-        <p className="mb-4">{service.solution}</p>
-        <ul className="list-disc pl-4">
+        <h3 className="text-xl sm:text-2xl font-bold mb-4">{service.title}</h3>
+        <p className="mb-4 text-sm sm:text-base">{service.challenge}</p>
+        <p className="mb-4 text-sm sm:text-base">{service.solution}</p>
+        <ul className="list-disc pl-4 text-sm sm:text-base">
           {service.result.map((item, index) => (
             <li key={index} className="mb-2">
               {item}
@@ -184,7 +181,7 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service, onClose }) => 
           ))}
         </ul>
         <Button
-          className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
+          className="mt-4 w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
           onClick={onClose}
         >
           Close
@@ -206,8 +203,8 @@ const Services: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-16 bg-blue-400">
-      <div className="container mx-auto px-4">
+    <section id="services" className="py-16 px-4 sm:px-6 lg:px-12 bg-blue-400">
+      <div className="max-w-7xl mx-auto">
         <motion.h2
           className="text-center font-bold text-3xl md:text-4xl text-white mb-12"
           initial={{ y: -50, opacity: 0 }}
@@ -216,7 +213,8 @@ const Services: React.FC = () => {
         >
           Our Services
         </motion.h2>
-        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+
+        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {cardData.map((item, index) => (
             <motion.div
               key={item.id}
@@ -240,3 +238,4 @@ const Services: React.FC = () => {
 };
 
 export default Services;
+
