@@ -50,6 +50,17 @@ const CertificateShowcase = () => {
       completedDate: "2025",
       duration: "55 hours"
     },
+    {
+      id: 3,
+      title: "Langchain-Develop LLM powered applications with langchain",
+      description: "gen ai",
+      image: "img/langchain.png",
+      downloadUrl: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-6c0af23e-af2f-43d9-bd62-46d8994c97fd.pdf", 
+      category: "bootcamp",
+      provider: "Udemy",
+      completedDate: "2025",
+      duration: "12 hours"
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
